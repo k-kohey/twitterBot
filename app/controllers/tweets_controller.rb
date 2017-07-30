@@ -8,6 +8,8 @@ class TweetsController < ApplicationController
       @tweet=Tweet.find(n)
       TweetBot.tweet(@tweet.image_url,@tweet.number)
       sleep(interval)
+      # Tweet.cout==データベースに入ってるデータの数になる
+      # 周期を変えたいなら，ここを任意の数にする
       if n==Tweet.count
         n=1
       elsif
